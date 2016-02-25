@@ -1,0 +1,12 @@
+<html>
+<body>
+	<h1>Edit {{i.name}}</h1>
+	<form action='{{ url_for("editMovement", category_id= category_id, movement_id=i.id) }}' method='POST'>
+		<input type='text' size='30' name='edit_name' placeholder='{{i.name}}'>
+		<input type='Submit' value='Edit'></br>
+		<input type='text' size='30' name='edit_pr' placeholder='{{i.personal_record}}'>
+		<input type='Submit' value='Edit'></br>
+	<a href="{{ url_for('indexMovement', category_id= category_id) }}">Cancel</a>
+</form>
+</body>
+</html>

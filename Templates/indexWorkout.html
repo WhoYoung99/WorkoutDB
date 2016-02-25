@@ -1,0 +1,27 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+	<link href="{{ url_font }}" rel=stylesheet type=text/css>
+</head>
+<body>
+	<h1>Main Workout Page: List all categories and their movements(X).</h1>
+	<a href= "{{ url_for('addCategory') }}">Create a new workout category.</a>
+	<div class='grid'>
+		<div class='row'>
+			<div class='col-2'>2 Columns</div>
+			<div class='col-10'>10 Columns</div>
+			<div class='col-12'>
+				<img src="http://placehold.it/1255x300">
+			</div>
+		</div>
+	</div>
+	{% for c in categories %}
+	<p><strong><a href= "{{ url_for('indexMovement', category_id= c.id) }}">{{c.name}}</a>:</strong>
+	{{c.description}}</br>
+	<a href= "{{ url_for('editCategory', category_id= c.id) }}">Edit</a>
+	<a href= "{{ url_for('deleteCategory', category_id = c.id) }}">Delete</a></p>
+	
+</br>
+	{% endfor %}
+</body>
+</html>

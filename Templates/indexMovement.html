@@ -1,0 +1,14 @@
+<html>
+<body>
+	<a href="{{ url_for('addMovement', category_id=category.id) }}">Create a new movement.</a>
+	<p>{{category.name}}</p>
+		{% for i in movement %}
+		<p>{{i.name}}:
+		{{i.personal_record}}
+		<a href="{{ url_for('editMovement', category_id= category.id, movement_id= i.id) }}">Edit</a>
+		<a href="{{ url_for('deleteMovement', category_id= category.id, movement_id= i.id) }}">Delete</a>
+	</p>
+		{% endfor %}
+	<a href="{{ url_for('indexCategory') }}">Return</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+<body>
+	<h1>Create a new workout category.</h1>
+
+	<form action= "{{ url_for('addCategory', category_name= category_name) }}", method= 'POST'>
+		<p>Category Name:</p>
+		<input type= 'text' size= '30' name= 'cate_name'>
+		<p>Description:</p>
+		<input type= 'text' size= '30' name= 'description'>
+
+		<input type= 'Submit' value= 'Create'>
+	</form>
+</body>
+</html>

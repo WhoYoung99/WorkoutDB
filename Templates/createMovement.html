@@ -1,0 +1,15 @@
+<html>
+<body>
+
+	<h1>Create a new movement under '{{i.name}}' category.</h1>
+	<form action="{{ url_for('addMovement', category_id=i.id) }}" method="POST">
+		<p>Movement Name:
+		<input type="text" size="30" name="move_name">
+		<p>Max Weight(PR):
+		<input type="text" size="30" name="move_pr">
+		
+		<input type="Submit" Value="Create"></p>
+	</form>
+	<a href="{{ url_for('indexMovement', category_id=i.id) }}">Cancel</a>
+</body>
+</html>
